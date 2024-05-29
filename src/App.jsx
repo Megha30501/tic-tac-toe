@@ -32,6 +32,15 @@ function calculateWinner(squares) {
   }
   return null;
 }
+function PlayAgain ({setSquares , setXIsNext}) {
+  const handlePlaying = () =>{
+    setSquares(Array(9).fill(null));
+    setXIsNext(true);
+  }
+  return(
+  <button className="playagain" onClick={handlePlaying}>Play Again ?</button>
+)
+}
 const App = () => {
   const [xIsNext, setXIsNext] = useState(true);
   const [squares, setSquares] = useState(Array(9).fill(null));
@@ -74,6 +83,10 @@ const App = () => {
     <Button value={squares[6]} onSquareClick={() => handleClick(6)} />
     <Button value={squares[7]} onSquareClick={() => handleClick(7)} />
     <Button value={squares[8]} onSquareClick={() => handleClick(8)} />
+  </div>
+
+  <div className="board-row">
+    <PlayAgain setSquares={setSquares} setXIsNext={setXIsNext} />
   </div>
 </div>
   );
