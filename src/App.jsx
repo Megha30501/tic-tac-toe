@@ -1,5 +1,13 @@
 function Button(props) {
-  return <button className="square"> {props.value} </button>;
+  function handleClick() {
+    console.log(` ${props.value} clicked`);
+  }
+  return (
+    <button className="square" onClick={handleClick}>
+      {" "}
+      {props.value}{" "}
+    </button>
+  );
 }
 
 const App = () => {
