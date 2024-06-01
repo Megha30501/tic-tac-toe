@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
-import Board  from "./components/Board";
+import Board from "./components/Board";
+import PlayAgain from "./components/PlayAgain";
 
 function Game() {
   const [history, setHistory] = useState([Array(9).fill(null)]);
@@ -37,6 +38,9 @@ function Game() {
       </div>
       <div className="game-info">
         <ol>{moves}</ol>
+      </div>
+      <div>
+        <PlayAgain setHistory={setHistory} setCurrentMove={setCurrentMove} />
       </div>
     </div>
   );
